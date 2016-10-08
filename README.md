@@ -1,4 +1,7 @@
 # hackmusic
+
+http://a3c.thegladscientist.info/
+
 Chill or Go: Real-time Analytics for Ridesharing at A3C Festival and Conference 2016.
 
 We integrated the Mapquest API to gather real-time data of traffic around the various venues of the festival in a web-based mobile app. This happened in two-fold: 
