@@ -2,7 +2,7 @@
 
 # Chill or Go: Real-time Analytics for Ridesharing at A3C Festival and Conference 2016.
 
-![alt tag](https://raw.githubusercontent.com/thegladscientist/hackmusic/blob/master/assets/css/images/a3c-landingpage.jpeg)
+![alt tag](https://github.com/thegladscientist/hackmusic/blob/master/assets/css/images/a3c-landingpage.jpeg)
 
 http://a3c.thegladscientist.info/
 
