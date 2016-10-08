@@ -1,0 +1,451 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>a3c Conference & Festival: CoG</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Info</a></li>
+							<li><a href="#one">The Venues</a></li>
+							<li><a href="#two">What we do</a></li>
+							<li><a href="#three">Get in touch</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up overlay" style="height:100%;margin:0">
+						<div class="inner">
+							<h1>A3C Festival 2016 <br/>
+                                CoG: Chill or Go?</h1>
+							<p style="font-size:13px;margin-top:10px;">Real-time ridesharing analytics by Noise Riot, powered by MapQuest.</p>
+							<ul class="actions">
+								<li><a href="#one" class="button scrolly">Tell Me When to Go</a></li>
+							</ul>
+						</div>
+					</section>
+                    <section id="instructions" class="wrapper style1 fullscreen fade-up" style="margin-bottom:0;">
+						<div class="inner" style="text-align:center;background:green;padding: 100px 0;">
+							<h1 >Green is Go</h1>
+						</div>
+                        <div class="inner" style="text-align:center;background:blue;padding: 100px 0;">
+							<h1>Blue is Chill</h1>
+						</div>
+					</section>
+                
+				<!-- One -->
+					<section id="one" class="wrapper style2 spotlights">
+						<section>
+							<a href="#" class="image"><img src="https://www.mapquestapi.com/traffic/v2/flow?key=Uc9wwqc009uqUNGEVOBjGXmx05Z3Nxu1&mapLat=33.75534048240425&mapLng=-84.37306814730728&mapHeight=400&mapWidth=400&mapScale=433342" alt="" data-position="center center" /></a>
+                            
+							<div id="cafe-circa" class="content">
+								<div class="inner">
+									<h2>Cafe Circa</h2>
+									<p>464 Edgewood Ave SE, Atlanta, GA 30312</p>
+                            <script> 
+                        $.ajax({
+                            url: "https://www.mapquestapi.com/traffic/v2/incidents?key=Uc9wwqc009uqUNGEVOBjGXmx05Z3Nxu1&callback=?&boundingBox=33.983392,-84.647726,33.526681,-84.098410&filters=incidents,event,congestion&inFormat=kvp&outFormat=json", 
+                            dataType: "jsonp",
+                            jsonpCallback: "callbackF"
+                        });
+                        function callbackF (json){
+                            //console.log(json["incidents"].length);
+                            if (json["incidents"].length > 0){
+                                for (var i; i < json["incidents"].length; i++)
+                                {
+                            var impact = json["incidents"][i]["impacting"];
+                            if (impact == true)
+                            {
+                                $("#cafe-circa").css("background-color","blue");
+                                return;
+                            }
+                            else { $("#cafe-circa").css("background-color","green");}
+                            
+                            console.log(impact);
+                                }
+                            }else { $("#cafe-circa").css("background-color","green");}
+                        }
+                            </script>
+									<ul class="actions">
+										<li><a href="https://m.uber.com/ul/?action=setPickup&pickup[latitude]=33.75534048240425&pickup[longitude]=-84.37306814730728" class="button">Go</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+                        <section>
+							<a href="#" class="image"><img src="https://www.mapquestapi.com/traffic/v2/flow?key=Uc9wwqc009uqUNGEVOBjGXmx05Z3Nxu1&mapLat=33.75701745336328&mapLng=-84.37800341189448&mapHeight=400&mapWidth=400&mapScale=6770" alt="" data-position="center center" />
+                            </a>
+							<div id="delightful-eatz" class="content">
+								<div class="inner">
+									<h2>Delightful Eatz</h2>
+									<p>421 Edgewood Ave SE, Atlanta, GA 30312</p>
+                        <script> 
+                        $.ajax({
+                            url: "https://www.mapquestapi.com/traffic/v2/incidents?key=Uc9wwqc009uqUNGEVOBjGXmx05Z3Nxu1&callback=?&boundingBox=33.760585,-84.382295,33.753449,-84.373712&filters=incidents,event,congestion&inFormat=kvp&outFormat=json",
+                            dataType: "jsonp",
+                            jsonpCallback: "callbackF"
+                        });
+                        function callbackF (json){
+                            //console.log(json);
+                            if (json["incidents"].length > 0){
+                                for (var i; i < json["incidents"].length; i++)
+                                {
+                            var impact = json["incidents"][i]["impacting"];
+                            if (impact == true)
+                            {
+                                $("#delightful-eatz").css("background-color","blue");
+                                return;
+                            }
+                            else { $("#delightful-eatz").css("background-color","green");}
+                            console.log(impact);
+                            }
+                            }else { $("#delightful-eatz").css("background-color","green");}
+                        }
+                            </script>
+									<ul class="actions">
+										<li><a href="https://m.uber.com/ul/?action=setPickup&pickup[latitude]=33.75701745336328&pickup[longitude]=-84.37800341189448" class="button">Go</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+                        <section>
+							<a href="#" class="image"><img src="https://www.mapquestapi.com/traffic/v2/flow?key=Uc9wwqc009uqUNGEVOBjGXmx05Z3Nxu1&mapLat=33.75534048240425&mapLng=-84.37306814730728&mapHeight=400&mapWidth=400&mapScale=13541" alt="" data-position="center center" /></a>
+							<div id="edgewood-pizzeria" class="content">
+								<div  class="inner">
+									<h2>Edgewood Pizzeria</h2>
+									<p>478 Edgewood Ave SE, Atlanta, GA 30312</p>
+                                    <script> 
+                        $.ajax({
+                            url: "https://www.mapquestapi.com/traffic/v2/incidents?key=Uc9wwqc009uqUNGEVOBjGXmx05Z3Nxu1&callback=?&boundingBox=33.760585,-84.382295,33.753449,-84.373712&filters=incidents,event,congestion&inFormat=kvp&outFormat=json",
+                            dataType: "jsonp",
+                            jsonpCallback: "callbackF"
+                        });
+                        function callbackF (json){
+                            //console.log(json);
+                            if (json["incidents"].length > 0){
+                                for (var i; i < json["incidents"].length; i++)
+                                {
+                            var impact = json["incidents"][i]["impacting"];
+                            if (impact == true)
+                            {
+                                $("#edgewood-pizzeria").css("background-color","blue");
+                                return;
+                            }
+                            else { $("#edgewood-pizzeria").css("background-color","green");}
+                            console.log(impact);
+                            }
+                            }else { $("#edgewood-pizzeria").css("background-color","green");}
+                        }
+                            </script>
+                                    
+									<ul class="actions">
+										<li><a href="https://m.uber.com/ul/?action=setPickup&pickup[latitude]=33.75534048240425&pickup[longitude]=-84.37306814730728" class="button">Go</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+                        <section>
+							<a href="#" class="image"><img src="https://www.mapquestapi.com/traffic/v2/flow?key=Uc9wwqc009uqUNGEVOBjGXmx05Z3Nxu1&mapLat=33.754341420283104&mapLng=-84.37358313143812&mapHeight=400&mapWidth=400&mapScale=13541" alt="" data-position="center center" /></a>
+							<div id="joystick" class="content">
+								<div  class="inner">
+									<h2>Joystick Game Bar</h2>
+									<p>427 Edgewood Ave SE, Atlanta, GA 30312</p>
+                                    <script> 
+                        $.ajax({
+                            url: "https://www.mapquestapi.com/traffic/v2/incidents?key=Uc9wwqc009uqUNGEVOBjGXmx05Z3Nxu1&callback=?&boundingBox=33.760585,-84.382295,33.753449,-84.373712&filters=incidents,event,congestion&inFormat=kvp&outFormat=json",
+                            dataType: "jsonp",
+                            jsonpCallback: "callbackF"
+                        });
+                        function callbackF (json){
+                            //console.log(json);
+                            if (json["incidents"].length > 0){
+                                for (var i; i < json["incidents"].length; i++)
+                                {
+                            var impact = json["incidents"][i]["impacting"];
+                            if (impact == true)
+                            {
+                                $("#joystick").css("background-color","blue");
+                                return;
+                            }
+                            else { $("#joystick").css("background-color","green");}
+                            console.log(impact);
+                            }
+                            }else { $("#joystick").css("background-color","green");}
+                        }
+                            </script>
+                                    
+									<ul class="actions">
+										<li><a href="https://m.uber.com/ul/?action=setPickup&pickup[latitude]=33.754341420283104&pickup[longitude]=-84.37358313143812" class="button">Go</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+                        <section>
+							<a href="#" class="image"><img src="https://www.mapquestapi.com/traffic/v2/flow?key=Uc9wwqc009uqUNGEVOBjGXmx05Z3Nxu1&mapLat=33.755554565629836&mapLng=-84.38465529025116&mapHeight=400&mapWidth=400&mapScale=13541" alt="" data-position="center center" /></a>
+							<div id="loudermilk-center" class="content">
+								<div class="inner">
+									<h2>Loudermilk Center</h2>
+									<p>40 Courtland St NE, Atlanta, GA 30303</p>
+                                    <script> 
+                        $.ajax({
+                            url: "https://www.mapquestapi.com/traffic/v2/incidents?key=Uc9wwqc009uqUNGEVOBjGXmx05Z3Nxu1&callback=?&boundingBox=33.760585,-84.382295,33.753449,-84.373712&filters=incidents,event,congestion&inFormat=kvp&outFormat=json",
+                            dataType: "jsonp",
+                            jsonpCallback: "callbackF"
+                        });
+                        function callbackF (json){
+                            //console.log(json);
+                            if (json["incidents"].length > 0){
+                                for (var i; i < json["incidents"].length; i++)
+                                {
+                            var impact = json["incidents"][i]["impacting"];
+                            if (impact == true)
+                            {
+                                $("#loudermilk-center").css("background-color","blue");
+                                return;
+                            }
+                            else { $("#loudermilk-center").css("background-color","green");}
+                            console.log(impact);
+                                }
+                            }
+                            else { $("#loudermilk-center").css("background-color","green");}
+                        }
+                            </script>
+									<ul class="actions">
+										<li><a href="https://m.uber.com/ul/?action=setPickup&pickup[latitude]=33.755554565629836&pickup[longitude]=-84.38465529025116" class="button">Go</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+                        <section>
+							<a href="#" class="image"><img src="https://www.mapquestapi.com/traffic/v2/flow?key=Uc9wwqc009uqUNGEVOBjGXmx05Z3Nxu1&mapLat=33.75437710127361&mapLng=-84.37688761294433&mapHeight=400&mapWidth=400&mapScale=13541" alt="" data-position="center center" /></a>
+							<div id="music-room" class="content">
+								<div class="inner">
+									<h2>Music Room</h2>
+									<p>327 Edgewood Ave NE, Atlanta, GA 30312</p>
+                                    <script> 
+                        $.ajax({
+                            url: "https://www.mapquestapi.com/traffic/v2/incidents?key=Uc9wwqc009uqUNGEVOBjGXmx05Z3Nxu1&callback=?&boundingBox=33.760585,-84.382295,33.753449,-84.373712&filters=incidents,event,congestion&inFormat=kvp&outFormat=json",
+                            dataType: "jsonp",
+                            jsonpCallback: "callbackF"
+                        });
+                        function callbackF (json){
+                            //console.log(json);
+                            if (json["incidents"].length > 0){
+                                for (var i; i < json["incidents"].length; i++)
+                                {
+                            var impact = json["incidents"][i]["impacting"];
+                            if (impact == true)
+                            {
+                                $("#music-room").css("background-color","blue");
+                                return;
+                            }
+                            else { $("#music-room").css("background-color","green");}
+                            console.log(impact);
+                            }
+                            }else { $("#music-room").css("background-color","green");}
+                            
+                        }
+                            </script>
+									<ul class="actions">
+										<li><a href="https://m.uber.com/ul/?action=setPickup&pickup[latitude]=33.75437710127361&pickup[longitude]=-84.37688761294433" class="button">Go</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="#" class="image"><img src="https://www.mapquestapi.com/traffic/v2/flow?key=Uc9wwqc009uqUNGEVOBjGXmx05Z3Nxu1&mapLat=33.754341420283104&mapLng=-84.37182360232443&mapHeight=400&mapWidth=400&mapScale=27083" alt="" data-position="top center" /></a>
+							<div id="sound-table" class="content">
+								<div class="inner">
+									<h2>The Sound Table</h2>
+									<p>483 Edgewood Ave SE, Atlanta, GA 30312</p>
+                                    <script> 
+                        $.ajax({
+                            url: "https://www.mapquestapi.com/traffic/v2/incidents?key=Uc9wwqc009uqUNGEVOBjGXmx05Z3Nxu1&callback=?&boundingBox=33.760585,-84.382295,33.753449,-84.373712&filters=incidents,event,congestion&inFormat=kvp&outFormat=json",
+                            dataType: "jsonp",
+                            jsonpCallback: "callbackF"
+                        });
+                        function callbackF (json){
+                            //console.log(json);
+                            if (json["incidents"].length > 0){
+                                for (var i; i < json["incidents"].length; i++)
+                                {
+                            var impact = json["incidents"][i]["impacting"];
+                            if (impact == true)
+                            {
+                                $("#sound-table").css("background-color","blue");
+                                return;
+                            }
+                            else { $("#sound-table").css("background-color","green");}
+                            console.log(impact);
+                            }
+                            }else { $("#sound-table").css("background-color","green");}
+                        }
+                            </script>
+									<ul class="actions">
+										<li><a href="https://m.uber.com/ul/?action=setPickup&pickup[latitude]=33.754341420283104&pickup[longitude]=-84.37182360232443" class="button">Go</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="#" class="image"><img src="https://www.mapquestapi.com/traffic/v2/flow?key=Uc9wwqc009uqUNGEVOBjGXmx05Z3Nxu1&mapLat=33.75441278224928&mapLng=-84.37989168704091&mapHeight=400&mapWidth=400&mapScale=13541" alt="" data-position="25% 25%" /></a>
+							<div id="sweet-auburn" class="content">
+								<div class="inner">
+									<h2>Sweet Auburn Curb Market</h2>
+									<p>209 Edgewood Ave SE, Atlanta, GA 30303</p>
+                                    <script> 
+                        $.ajax({
+                            url: "https://www.mapquestapi.com/traffic/v2/incidents?key=Uc9wwqc009uqUNGEVOBjGXmx05Z3Nxu1&callback=?&boundingBox=33.760585,-84.382295,33.753449,-84.373712&filters=incidents,event,congestion&inFormat=kvp&outFormat=json",
+                            dataType: "jsonp",
+                            jsonpCallback: "callbackF"
+                        });
+                        function callbackF (json){
+                            //console.log(json);
+                            if (json["incidents"].length > 0){
+                                for (var i; i < json["incidents"].length; i++)
+                                {
+                            var impact = json["incidents"][i]["impacting"];
+                            if (impact == true)
+                            {
+                                $("#sweet-auburn").css("background-color","blue");
+                                return;
+                            }
+                            else { $("#sweet-auburn").css("background-color","green");}
+                            console.log(impact);
+                            }
+                            }else { $("#sweet-auburn").css("background-color","green");}
+                        }
+                            </script>
+									<ul class="actions">
+										<li><a href="https://m.uber.com/ul/?action=setPickup&pickup[latitude]=33.75441278224928&pickup[longitude]=-84.37989168704091" class="button">Go</a></li>
+									</ul>
+								</div>  
+							</div>
+						</section>
+					</section>
+
+				<!-- Two -->
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>What we do</h2>
+							<p>Noise Riot is a band of brothers, forged in steel from the ancient planets of Kruyupinopendøg and Viratriå, respectively. We use code to help festival goers, and improve the experience of life through computers.</p>
+							<div class="features">
+								<section>
+									<span class="icon major fa-code"></span>
+									<h3>Powered by MapQuest</h3>
+									<p>By utilizing MapQuest's powerful API, we leverage real-time data and traffic statistics to analyze your position in relation to any and all disruptions nearby.</p>
+								</section>
+								<section>
+									<span class="icon major fa-lock"></span>
+									<h3>Protect Your Wallet</h3>
+									<p>Use our software to know exactly when to call that Uber or Lyft and save money by avoiding surge pricing and next morning credit card surprises.</p>
+								</section>
+								<section>
+									<span class="icon major fa-cog"></span>
+									<h3>Always Improving</h3>
+									<p>Our software has plans for improvement, and built in just 18 hours, shows great promise for future algorithmic learnings. The next version will include MapQuest's route planner, so you'll know exactly the route to tell your driver when the time to GO arrives.</p>
+								</section>
+								<!--<section>
+									<span class="icon major fa-desktop"></span>
+									<h3>Veroeros quis lorem</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon major fa-chain"></span>
+									<h3>Urna quis bibendum</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>-->
+								<section>
+									<span class="icon major fa-diamond"></span>
+									<h3>Your Time is of the Most Value</h3>
+									<p>We designed Chill or Go (CoG) to be simple, and provide quick information so you can increase the time in your life meant for fun.</p>
+								</section>
+							</div>
+							<ul class="actions">
+								<li><a href="#" class="button">Learn more</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>Get in touch</h2>
+							<p>Like I said, we're from another planet. Stop by, say hey, setup an interdimensional high-five.</p>
+							<div class="split style1">
+								<section>
+									
+										<ul class="actions">
+											<li><a href="mailto:sabio@sabiodesigns.com?subject=CoG" class="button submit">High Five-uh!</a></li>
+										</ul>
+								</section>
+								<section>
+									<ul class="contact">
+										<li>
+											<h3>Address</h3>
+											<span>Loudermilk Center<br />
+											Atlanta, Sector 8<br />
+											Milky Way</span>
+										</li>
+											<h3>Phone</h3>
+											<span>(001) 010-1001</span>
+										</li>
+										<li>
+											<h3>Social</h3>
+											<ul class="icons">
+												<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
+												<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
+												<li><a href="#" class="fa-github"><span class="label">GitHub</span></a></li>
+												<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
+												<li><a href="#" class="fa-linkedin"><span class="label">LinkedIn</span></a></li>
+											</ul>
+										</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; A3C CoG. All rights reserved.</li><li>Design Template: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
