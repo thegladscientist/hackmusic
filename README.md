@@ -12,4 +12,6 @@ We integrated the MapQuest API to gather real-time data of traffic around the va
 
 To make the app quick and easy for users, we decided to use a color-coded interface, where a green background behind the venue name means the user is good to go to hail an Uber. We have integrated with the Uber API as well to allow for deep-linking directly from the GPS coordinates of the venue as the starting point of their trip upon tapping "Go". A blue background behind the venue name means the user should take advantage of the moment and chill until the traffic dies down and any surge or plus pricing ends.
 
+Our goal is to improve the efficiency for festival/conference goers to move between venues and enjoy their interests full, by providing them with a quick-glance view of when to chill and when to go, so they have the most fulfilled experience possible. 
+
 
